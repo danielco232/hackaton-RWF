@@ -1,5 +1,4 @@
 import { Router } from 'express';
-import { IPost } from '../models/post.model';
 import { IUser } from '../models/user.model';
 import PostController from './post.controller';
 import UserController from './user.controller';
@@ -46,14 +45,16 @@ export default class APIController {
         res.sendStatus(200);
     });
 
-    this.router.get('post/:postId', async (req, res) => {
-        const post = await PostController.instance.findPostById(+req.params.postId);
-        res.send(post);
+    this.router.get('post/all', async (req, res) => {
+        res.send(await PostController.instance.findAll());
     });
 
-    this.router.get('post/:postId/comment/add', async (req, res) => {
-        const post = await PostController.instance.findPostById(+req.params.postId);
-        res.send(post);
+    this.router.post('post/:postId/comment/add', async (req, res) => {
+        PostController.instance.createComment({
+            postId: +req.params.postId,
+            ...req.body
+        });
+        res.sendStatus(200);
     });
   }
 }

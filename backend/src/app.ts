@@ -2,7 +2,8 @@ import express, { Express } from 'express';
 import compression from 'compression';
 import APIController from './controllers/api.controller';
 import postgresDB from './models/database.model';
-import { nextTick } from 'process';
+import { Post } from './models/post.model';
+import { Comment } from './models/comment.model';
 
 export default class App {
   private static _instance: App;
@@ -40,6 +41,7 @@ export default class App {
     await postgresDB.authenticate();
     await postgresDB.createSchema('management', {});
     await postgresDB.createSchema('posts', {});
-    await postgresDB.sync({ alter: true });
+    await Post.hasMany(Comment)
+    await postgresDB.sync({ alter: false });
   };
 }
