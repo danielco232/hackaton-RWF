@@ -47,8 +47,8 @@ export default class APIController {
     });
 
     this.router.get('post/:postId', async (req, res) => {
-        await PostController.instance.findPostById(+req.params.postId);
-        res.sendStatus(200);
+        const post = await PostController.instance.findPostById(+req.params.postId);
+        res.send(post);
     });
   }
 }
