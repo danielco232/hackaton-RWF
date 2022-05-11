@@ -39,6 +39,7 @@ export default class App {
 
     await postgresDB.authenticate();
     await postgresDB.createSchema('management', {});
+    await postgresDB.createSchema('posts', {});
     await postgresDB.sync({ alter: true });
   };
 }
