@@ -1,4 +1,4 @@
-import { IPost, Post } from '../models/post.model';
+import { IPost, IPostBase, Post } from '../models/post.model';
 
 export default class PostController {
   private static _instance: PostController;
@@ -10,7 +10,10 @@ export default class PostController {
     return PostController._instance;
   }
 
-  async createPost(post: IPost) {
-    return Post.create(Post);
+  async createPost(post: IPostBase) {
+    return Post.create({
+        ...Post,
+        likes: 0
+    });
   }
 }
