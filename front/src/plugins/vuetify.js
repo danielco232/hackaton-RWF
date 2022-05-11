@@ -11,6 +11,7 @@ const current = navigator.language.split('-')[0]
 Vue.use(Vuetify)
 
 export default new Vuetify({
+  rtl: "true",
   locales,
   current,
   icons: {
