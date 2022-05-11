@@ -18,6 +18,11 @@ const router = new Router({
       component: require('@/views/Login').default
     },
     {
+      path: '/signin',
+      name: 'signin',
+      component: require('@/views/Signin').default
+    },
+    {
       path: '/dashboard',
       name: 'dashboard',
       component: require('@/views/Dashboard').default,
