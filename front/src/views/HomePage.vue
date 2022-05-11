@@ -1,40 +1,49 @@
 <template>
+
+
   <div class="HomeClass">
-    <AppBar />
     <v-main>
       <v-container>
         <create-post />
-        <v-list>
-          <v-list-item 
-            v-for="(post, i) in posts"
-            :key="i">
-          </v-list-item>
-        </v-list>
+        <v-row v-for="(post, i) in posts" :key="i">
+          <post class="ma-5" :post="post" /> 
+        </v-row>
       </v-container>
     </v-main>
   </div>
 </template>
 
 <script>
-import AppBar from '../components/AppBar'
-import CreatePost from '../components/CreatePost'
+import CreatePost from "../components/CreatePost";
+import Post from "../components/Post";
 
 export default {
   data() {
     return {
-      posts: [],
-      newPost: ''
-    }
+      posts: [{
+        id:111,
+        title:"כותרת",
+        body:"לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. ",
+        likes: 90
+      },
+      {
+        id:112,
+        title:"כותרת",
+        body:"לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולורס מונפרד אדנדום סילקוף, מרגשי ומרגשח. עמחליף קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. ",
+        likes: 90
+      }],
+      newPost: "",
+    };
   },
-  name: 'HomePage',
+  name: "HomePage",
   components: {
-    AppBar,
-    CreatePost
+    CreatePost,
+    Post,
   },
   methods: {
-    createPost() {}
-  }
-}
+    createPost() {},
+  },
+};
 </script>
 
 <style lang="scss">
