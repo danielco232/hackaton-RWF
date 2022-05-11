@@ -13,7 +13,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "compression": "^1.7.4"
+    "compression": "^1.7.4",
+    "postgres": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
