@@ -51,7 +51,7 @@ export default class APIController {
         res.send(post);
     });
 
-    this.router.get('post/:postId/commit/add', async (req, res) => {
+    this.router.get('post/:postId/comment/add', async (req, res) => {
         const post = await PostController.instance.findPostById(+req.params.postId);
         res.send(post);
     });
