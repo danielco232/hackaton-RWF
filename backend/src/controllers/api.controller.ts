@@ -15,7 +15,7 @@ export default class APIController {
 
   constructor() {
     this.router.post('/register', async (req, res) => {
-        const isRegister = await UserController.instance.createUser(<IUser>(req.body));
+        const isRegister = await UserController.instance.createUser((req.body));
         if(isRegister)
             res.sendStatus(200);
         res.sendStatus(409);
