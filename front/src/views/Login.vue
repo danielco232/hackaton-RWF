@@ -24,7 +24,7 @@
           </v-card-text>
           <v-card-actions class="pt-0 pb-5">
             <v-spacer />
-            <v-btn outlined> המשך </v-btn>
+            <v-btn outlined @click="loginUser"> המשך </v-btn>
             <v-spacer />
           </v-card-actions>
         </v-card>
@@ -34,10 +34,23 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+  data() {
+    return {
+      user: {
+        username: '',
+        password: ''
+      }
+    };
+  },
   methods: {
     moveToSignin() {
       this.$router.push({ path: 'signin' })
+    },
+    async loginUser() {
+      await axios.post('http://localhost:3000/api/login', this.user);
     }
   },
 };
