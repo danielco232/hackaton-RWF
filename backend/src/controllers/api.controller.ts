@@ -45,5 +45,10 @@ export default class APIController {
         await PostController.instance.decrementLikes(req.body);
         res.sendStatus(200);
     });
+
+    this.router.get('post/:postId', async (req, res) => {
+        await PostController.instance.findPostById(+req.params.postId);
+        res.sendStatus(200);
+    });
   }
 }
