@@ -9,29 +9,47 @@
           <v-card-text class="py-0 text-h5 font-weight-bold">
             <v-row class="d-flex justify-center">
               <v-col cols="5">
-                <v-text-field label="שם פרטי"></v-text-field>
+                <v-text-field
+                  v-model="newUser.fname"
+                  label="שם פרטי"
+                ></v-text-field>
               </v-col>
               <v-col cols="5">
-                <v-text-field label="שם משפחה"></v-text-field>
+                <v-text-field
+                  v-model="newUser.lname"
+                  label="שם משפחה"
+                ></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
               <v-col cols="5">
-                <v-text-field label="שם משתמש"></v-text-field>
+                <v-text-field
+                  v-model="newUser.username"
+                  label="שם משתמש"
+                ></v-text-field>
               </v-col>
               <v-col cols="5">
-                <v-text-field type="password" label="סיסמא"></v-text-field>
+                <v-text-field
+                  v-model="newUser.password"
+                  type="password"
+                  label="סיסמא"
+                ></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
               <v-col cols="2">
-                <v-text-field type="number" label="גיל"></v-text-field>
+                <v-text-field
+                  v-model="newUser.age"
+                  type="number"
+                  label="גיל"
+                ></v-text-field>
               </v-col>
               <v-col cols="4">
                 <v-file-input truncate-length="25" label="תמונה"></v-file-input>
               </v-col>
               <v-col cols="4">
                 <v-autocomplete
+                  v-model="newUser.unit"
                   :items="[
                     'גולני',
                     'גבעתי',
@@ -47,10 +65,14 @@
             </v-row>
             <v-row class="d-flex justify-center">
               <v-col cols="5">
-                <v-text-field label="פציעה"></v-text-field>
+                <v-text-field
+                  v-model="newUser.injury"
+                  label="פציעה"
+                ></v-text-field>
               </v-col>
               <v-col cols="5">
                 <v-autocomplete
+                  v-model="newUser.address"
                   :items="[
                     'ירושלים',
                     'רמת גן',
@@ -66,7 +88,10 @@
             </v-row>
             <v-row class="d-flex justify-center">
               <v-col cols="10">
-                <v-textarea label="ספר לנו משהו על עצמך"></v-textarea>
+                <v-textarea
+                  v-model="newUser.bio"
+                  label="ספר לנו משהו על עצמך"
+                ></v-textarea>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
@@ -80,7 +105,7 @@
           </v-card-text>
           <v-card-actions class="pt-0 pb-5">
             <v-spacer />
-            <v-btn outlined> המשך </v-btn>
+            <v-btn @click="addUser" outlined> המשך </v-btn>
             <v-spacer />
           </v-card-actions>
         </v-card>
@@ -90,10 +115,36 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
+  data() {
+    return {
+      newUser: {
+        username: "glkdglgfkjl",
+        password: "",
+        fname: "",
+        lname: "",
+        age: "",
+        address: "",
+        photo: "",
+        unit: "",
+        injury: "",
+        bio: "",
+      },
+    };
+  },
   methods: {
     moveToLogin() {
       this.$router.push({ path: "login" });
+    },
+    async addUser() {
+      try {
+        await axios.post("http://localhost:3000/api/register", this.newUser);
+        this.$router.push({ path: "home" });
+      } catch {
+        alert("שגיאה");
+      }
     },
   },
 };
