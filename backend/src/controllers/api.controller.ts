@@ -19,6 +19,14 @@ export default class APIController {
         if(isRegister)
             res.sendStatus(200);
         res.sendStatus(409);
-    })
+    });
+    
+    this.router.post('/login', async (req, res) => {
+        const user = <IUser>JSON.parse(req.body);
+        const dbUser = <IUser>(await UserController.instance.findUserByUsername(user.username));
+        if (user.password == dbUser?.password)
+            res.sendStatus(200);
+        res.sendStatus(401);
+    });
   }
 }
