@@ -35,5 +35,15 @@ export default class APIController {
         await PostController.instance.createPost(req.body);
         res.sendStatus(200);
     });
+
+    this.router.post('post/like/add', async (req, res) => {
+        await PostController.instance.incrementLikes(req.body);
+        res.sendStatus(200);
+    });
+
+    this.router.post('post/like/remove', async (req, res) => {
+        await PostController.instance.decrementLikes(req.body);
+        res.sendStatus(200);
+    });
   }
 }

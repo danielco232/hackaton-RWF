@@ -16,4 +16,14 @@ export default class PostController {
         likes: 0
     });
   }
+
+ async incrementLikes(postId: number) {
+     const post = await Post.findByPk(postId);
+     return post.update({ likes: post.likes+1 });
+ };
+
+ async decrementLikes(postId: number) {
+    const post = await Post.findByPk(postId);
+    return post.update({ likes: post.likes-1 });
+};
 }
