@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Chat from '@/components/Chat/Chat'
+import HomePage from '@/views/HomePage'
 import auth from './middleware/auth'
 
 Vue.use(Router)
@@ -34,6 +35,11 @@ const router = new Router({
       path: '/chat',
       name: 'Chat',
       component: Chat,
+    },
+    {
+      path: '/homepage',
+      name: 'HomePage',
+      component: HomePage,
     },
     {
       path: '*',
