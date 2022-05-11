@@ -31,22 +31,27 @@ export default class APIController {
         res.sendStatus(401);
     });
 
-    this.router.post('post/new', async (req, res) => {
+    this.router.post('post/add', async (req, res) => {
         await PostController.instance.createPost(req.body);
         res.sendStatus(200);
     });
 
-    this.router.post('post/like/add', async (req, res) => {
-        await PostController.instance.incrementLikes(req.body);
+    this.router.post('post/:postId/like/add', async (req, res) => {
+        await PostController.instance.incrementLikes(+req.params.postId);
         res.sendStatus(200);
     });
 
-    this.router.post('post/like/remove', async (req, res) => {
-        await PostController.instance.decrementLikes(req.body);
+    this.router.post('post/:postId/like/remove', async (req, res) => {
+        await PostController.instance.decrementLikes(+req.params.postId);
         res.sendStatus(200);
     });
 
     this.router.get('post/:postId', async (req, res) => {
+        const post = await PostController.instance.findPostById(+req.params.postId);
+        res.send(post);
+    });
+
+    this.router.get('post/:postId/commit/add', async (req, res) => {
         const post = await PostController.instance.findPostById(+req.params.postId);
         res.send(post);
     });
