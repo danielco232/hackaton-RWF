@@ -1,36 +1,30 @@
 {
-    "name": "RWF",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "build": "npm run build-ts && npm run lint",
-      "build-ts": "tsc",
-      "debug": "npm run build && npm run watch-debug",
-      "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
-      "serve": "node dist/index.js",
-      "dev": "tsc-watch --onSuccess \"node ./dist/eager-loading.js\"",
-      "serve-debug": "nodemon --inspect dist/server.js",
-      "start": "npm run serve",
-      "test": "jest --forceExit --coverage --verbose",
-      "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
-      "watch-debug": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run serve-debug\"",
-      "watch-node": "nodemon dist/server.js",
-      "watch-test": "npm run test -- --watchAll",
-      "watch-ts": "tsc -w"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-    },
-    "devDependencies": {
-      "@types/node": "^14.14.37",
-      "@typescript-eslint/parser": "^4.21.0",
-      "eslint": "^7.23.0",
-      "eslint-config-airbnb-base": "^14.2.1",
-      "eslint-config-prettier": "^8.1.0",
-      "eslint-plugin-import": "^2.22.1",
-      "eslint-plugin-prettier": "^3.3.1",
-      "typescript": "^4.2.4"
-    }
+  "name": "RWF-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "dev:debug": "nodemon --inspect src/index.ts",
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/parser": "^4.21.0",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "nodemon": "^2.0.12",
+    "ts-node": "^10.1.0",
+    "typescript": "^4.2.3"
   }
+}
