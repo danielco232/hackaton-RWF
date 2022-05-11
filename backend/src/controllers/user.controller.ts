@@ -1,4 +1,4 @@
-import { IUser, User, UserStatic } from '../models/user.model';
+import { IUser, User } from '../models/user.model';
 
 export default class UserController {
   private static _instance: UserController;

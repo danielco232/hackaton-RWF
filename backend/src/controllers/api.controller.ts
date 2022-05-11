@@ -1,5 +1,7 @@
 import { Router } from 'express';
+import { IPost } from '../models/post.model';
 import { IUser } from '../models/user.model';
+import PostController from './post.controller';
 import UserController from './user.controller';
 
 export default class APIController {
@@ -27,6 +29,11 @@ export default class APIController {
         if (user.password == dbUser?.password)
             res.sendStatus(200);
         res.sendStatus(401);
+    });
+
+    this.router.post('post/new', async (req, res) => {
+        // await PostController.instance.createPost();
+        res.sendStatus(200);
     });
   }
 }
