@@ -45,13 +45,11 @@
                 ></v-text-field>
               </v-col>
               <v-col cols="4">
-                <v-file-input
-                  truncate-length="25"
-                  label="תמונה"
-                ></v-file-input>
+                <v-file-input truncate-length="25" label="תמונה"></v-file-input>
               </v-col>
               <v-col cols="4">
                 <v-autocomplete
+                  v-model="newUser.unit"
                   :items="[
                     'גולני',
                     'גבעתי',
@@ -74,6 +72,7 @@
               </v-col>
               <v-col cols="5">
                 <v-autocomplete
+                  v-model="newUser.address"
                   :items="[
                     'ירושלים',
                     'רמת גן',
@@ -140,12 +139,12 @@ export default {
       this.$router.push({ path: "login" });
     },
     async addUser() {
-
+      try {
         await axios.post("http://localhost:3000/api/register", this.newUser);
-        alert("work");
-  
-        alert("שגיאה")
-      
+        this.$router.push({ path: "home" });
+      } catch {
+        alert("שגיאה");
+      }
     },
   },
 };
