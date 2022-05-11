@@ -1,3 +1,5 @@
+import App from './app';
+
 (async () => {
-  console.log('Hello World');
+    App.instance.init();
 })();
