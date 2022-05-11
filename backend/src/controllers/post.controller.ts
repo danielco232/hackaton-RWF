@@ -1,4 +1,5 @@
-import { IPost, IPostBase, Post } from '../models/post.model';
+import { IComment, Comment } from '../models/comment.model';
+import { IPostBase, Post } from '../models/post.model';
 
 export default class PostController {
   private static _instance: PostController;
@@ -29,5 +30,15 @@ export default class PostController {
 
  async findPostById(postId: number) {
     return Post.findByPk(postId);
- }
+ };
+
+ async findAll() {
+     return Post.findAll({
+         include: Comment
+     });
+ };
+
+ async createComment(comment: IComment) {
+    return Comment.create(comment);
+ };
 }
