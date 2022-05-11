@@ -7,7 +7,11 @@ export interface IPostBase {
 }
 
 export interface IPost extends IPostBase {
-    likes: number
+    likes: number;
+}
+
+export interface IDataPost extends IPost {
+    comments: Comment[];
 }
 
 export interface PostStatic extends Model<IPost>, IPost {
