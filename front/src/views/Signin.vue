@@ -5,12 +5,12 @@
         <v-card class="mx-15" color="#757194" dark>
           <v-img src="../assets/logo.png"></v-img>
           <v-card-title class="d-flex justify-center py-0"
-            ><p class="text-h5">התחברות</p></v-card-title
+            ><p class="text-h5">הרשמה</p></v-card-title
           >
           <v-card-text class="py-0 text-h5 font-weight-bold">
             <v-row class="d-flex justify-center">
               <v-col cols="10">
-                <v-text-field label="שם משתמש"></v-text-field>
+                <v-text-field label="מייל"></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
