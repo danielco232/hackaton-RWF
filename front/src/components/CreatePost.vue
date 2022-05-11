@@ -20,12 +20,16 @@
       ></v-row>
     </v-card-text>
     <v-card-actions class="pl-10">
-      <v-row> </v-row>
+      <v-row class="d-flex justify-end py-0"> 
+          <v-btn outlined @click="createPost"> פרסם </v-btn>
+      </v-row>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   name: "CreatePost",
   data() {
@@ -36,5 +40,15 @@ export default {
       },
     };
   },
+  methods: {
+      async createPost() {
+          await axios.post('http://localhost:3000/api/post/add', this.newPost);
+          
+          this.newPost = {
+                title: "",
+                body: "",
+            };
+      }
+  }
 };
 </script>

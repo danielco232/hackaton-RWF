@@ -10,12 +10,12 @@
           <v-card-text class="py-0 text-h5 font-weight-bold">
             <v-row class="d-flex justify-center">
               <v-col cols="10">
-                <v-text-field label="שם משתמש"></v-text-field>
+                <v-text-field label="שם משתמש" v-model="user.username"></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
               <v-col cols="10">
-                <v-text-field label="סיסמא"></v-text-field>
+                <v-text-field label="סיסמא" v-model="user.password"></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
