@@ -1,6 +1,6 @@
 import { Sequelize } from 'sequelize';
 
-const postgresDB = new Sequelize('rwf', 'postgres', 'n8410201', {
+const postgresDB = new Sequelize('rwf', 'postgres', 'Aa123456', {
     host: '127.0.0.1',
     dialect: 'postgres'
   });
