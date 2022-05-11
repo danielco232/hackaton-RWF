@@ -19,7 +19,7 @@
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
-              <p class="text-h6 text-decoration-underline"> עוד אין לך חשבון? הירשם עכשיו</p>
+              <p @click="moveToSignin" class="text-subtitle-1 text-decoration-underline"> עוד אין לך חשבון? הירשם עכשיו</p>
             </v-row>
           </v-card-text>
           <v-card-actions class="pt-0 pb-5">
@@ -34,7 +34,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    moveToSignin() {
+      this.$router.push({ path: 'signin' })
+    }
+  },
+};
 </script>
 
 <style lang="scss" scoped></style>
