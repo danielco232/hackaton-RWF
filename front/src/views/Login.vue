@@ -50,7 +50,12 @@ export default {
       this.$router.push({ path: 'signin' })
     },
     async loginUser() {
-      await axios.post('http://localhost:3000/api/login', this.user);
+      try {
+        await axios.post('http://localhost:3000/api/login', this.user);
+        this.$router.push({ path: "homepage" });
+      } catch {
+        alert("שגיאה");
+      }
     }
   },
 };
