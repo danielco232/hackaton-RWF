@@ -5,9 +5,9 @@
         <v-card class="mx-15" color="#757194" dark>
           <v-img src="../assets/logo.png"></v-img>
           <v-card-title class="d-flex justify-center py-0"
-            ><p class="text-h5">התחברות</p></v-card-title
+            ><p class="">התחברות</p></v-card-title
           >
-          <v-card-text class="py-0 text-h5 font-weight-bold">
+          <v-card-text class="py-0  font-weight-">
             <v-row class="d-flex justify-center">
               <v-col cols="10">
                 <v-text-field
@@ -27,7 +27,7 @@
             <v-row class="d-flex justify-center">
               <p
                 @click="moveToSignin"
-                class="text-subtitle-1 text-decoration-underline"
+                class=" text-decoration-underline"
               >
                 עוד אין לך חשבון? הירשם עכשיו
               </p>

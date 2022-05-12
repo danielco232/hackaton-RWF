@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <router-view />
   </v-app>
 </template>
@@ -18,4 +18,6 @@ html { // vuetify reset
   overflow-y: auto !important;
   overflow-x: auto !important;
 }
+#app {
+  background-color: #d1cdf19a}
 </style>

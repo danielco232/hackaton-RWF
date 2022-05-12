@@ -1,13 +1,8 @@
 <template>
-  <v-card class="mx-auto" color="#f8c28c" dark max-width="400">
-    <v-card-text class="text-h5 mb-0 pb-0 font-weight-bold text-center">
-      {{match.user}}
+  <v-card class="mx-auto" color="#a599fc" dark max-width="400">
+    <v-card-text class="my-3 pb-0" >
+      <v-row class="my-3 pb-0 d-flex justify-center align-center ">{{ match.username }}</v-row>
     </v-card-text>
-    <v-card-actions class="pl-10">
-        <v-icon class="mx-1">
-          mdi-heart
-        </v-icon>
-    </v-card-actions>
   </v-card>
 </template>
 

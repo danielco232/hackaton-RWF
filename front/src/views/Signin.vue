@@ -4,9 +4,9 @@
       <v-col cols="8">
         <v-card class="pt-10" color="#757194" dark>
           <v-card-title class="d-flex justify-center py-0"
-            ><p class="text-h5">הרשמה</p></v-card-title
+            ><p class="">הרשמה</p></v-card-title
           >
-          <v-card-text class="py-0 text-h5 font-weight-bold">
+          <v-card-text class="py-0 text-h5 font-weight-">
             <v-row class="d-flex justify-center">
               <v-col cols="5">
                 <v-text-field

@@ -1,14 +1,15 @@
 <template>
-  <v-toolbar color="grey" dark>
-    <v-btn text @click="home" class="py-5 text-h6"> בית </v-btn>
-    <v-btn text @click="match" class="py-5 text-h6"> המאצ' שלי </v-btn>
-    <v-btn text @click="info" class="py-5 text-h6"> קצת עלינו </v-btn>
-    <v-btn text @click="logoff" class="py-5 text-h6"> התנתק </v-btn>
+  <v-toolbar color="#757194" dark>
+    <v-btn text @click="home" class="py-5 "> בית </v-btn>
+    <v-btn text @click="match" class="py-5"> המאצ' שלי </v-btn>
+    <v-btn text @click="info" class="py-5 "> קצת עלינו </v-btn>
+    <v-btn text @click="logoff" class="py-5 "> התנתק </v-btn>
 
     <v-spacer></v-spacer>
-    <v-toolbar-title class="mt-1 pt-0 text-h6 font-weight-bold">
+    <v-img max-width="230" max-height="50" src="../assets/s-logo.png"></v-img>
+    <!-- <v-toolbar-title class="mt-1 pt-0  font-weight-">
       RWF - Better Together
-    </v-toolbar-title>
+    </v-toolbar-title> -->
   </v-toolbar>
 </template>
 

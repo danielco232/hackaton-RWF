@@ -47,6 +47,11 @@ const router = new Router({
       component: require('@/views/Match').default
     },
     {
+      path: '/info',
+      name: 'Info',
+      component: require('@/views/Info').default
+    },
+    {
       path: '*',
       redirect: '/'
     }

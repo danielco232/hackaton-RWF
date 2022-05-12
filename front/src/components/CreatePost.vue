@@ -1,12 +1,14 @@
 <template>
-  <v-card class="mx-auto" color="#FFA28C" dark max-width="400">
-        <v-card-text class="text-h5 mb-0 pb-0 font-weight-bold text-center">
+<!-- eab885 -->
+  <v-card class="mx-auto white--text" color="#FAC47D" dark max-width="400">
+        <v-card-text class=" mb-0 pb-0 font-weight- text-center">
     מה יושב עליך?
     </v-card-text>
-    <v-card-text class="mt-1 pt-0">
-      <v-row class="d-flex justify-center py-0"
+    <v-card-text class="mt-1 mb-0 py-0">
+      <v-row class="d-flex justify-center  py-0"
         ><v-col cols="10"
           ><v-textarea
+          hide-details
             v-model="newPost.body"
         
             type="text"
@@ -35,6 +37,7 @@ export default {
   methods: {
       createPost() {
           this.$emit('create-post', this.newPost);
+          this.newPost = { body: "" };
       }
   }
 };

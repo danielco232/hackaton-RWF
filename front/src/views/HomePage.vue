@@ -74,7 +74,7 @@ export default {
         console.log("שגיאה");
       }
 
-      this.posts = [newPost, ...this.posts];
+      this.posts = [{...newPost}, ...this.posts];
     },
   },
 };
