@@ -52,10 +52,10 @@ export default {
     async loginUser() {
       try {
         await axios.post('http://localhost:3000/api/login', this.user);
-        this.$router.push({ path: "homepage" });
       } catch {
-        alert("שגיאה");
+        console.log("שגיאה")
       }
+      this.$router.push({ path: "homepage" });
     }
   },
 };

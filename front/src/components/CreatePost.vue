@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import axios from 'axios';
-
 export default {
   name: "CreatePost",
   data() {
@@ -41,13 +39,8 @@ export default {
     };
   },
   methods: {
-      async createPost() {
-          await axios.post('http://localhost:3000/api/post/add', this.newPost);
-          
-          this.newPost = {
-                title: "",
-                body: "",
-            };
+      createPost() {
+          this.$emit('create-post', this.newPost);
       }
   }
 };

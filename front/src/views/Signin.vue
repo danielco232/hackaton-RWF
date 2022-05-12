@@ -76,7 +76,7 @@
                   :items="[
                     'ירושלים',
                     'רמת גן',
-                    'רחובות',
+                    'אשדוד',
                     'גן יבנה',
                     'בת ים',
                     'הר אדר',
@@ -143,7 +143,7 @@ export default {
         await axios.post("http://localhost:3000/api/register", this.newUser);
         this.$router.push({ path: "home" });
       } catch {
-        alert("שגיאה");
+        console.log('שגיאה');
       }
     },
   },
