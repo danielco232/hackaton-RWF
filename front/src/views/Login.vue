@@ -10,16 +10,27 @@
           <v-card-text class="py-0 text-h5 font-weight-bold">
             <v-row class="d-flex justify-center">
               <v-col cols="10">
-                <v-text-field label="שם משתמש" v-model="user.username"></v-text-field>
+                <v-text-field
+                  label="שם משתמש"
+                  v-model="user.username"
+                ></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
               <v-col cols="10">
-                <v-text-field label="סיסמא" v-model="user.password"></v-text-field>
+                <v-text-field
+                  label="סיסמא"
+                  v-model="user.password"
+                ></v-text-field>
               </v-col>
             </v-row>
             <v-row class="d-flex justify-center">
-              <p @click="moveToSignin" class="text-subtitle-1 text-decoration-underline"> עוד אין לך חשבון? הירשם עכשיו</p>
+              <p
+                @click="moveToSignin"
+                class="text-subtitle-1 text-decoration-underline"
+              >
+                עוד אין לך חשבון? הירשם עכשיו
+              </p>
             </v-row>
           </v-card-text>
           <v-card-actions class="pt-0 pb-5">
@@ -34,29 +45,29 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   data() {
     return {
       user: {
-        username: '',
-        password: ''
-      }
+        username: "",
+        password: "",
+      },
     };
   },
   methods: {
     moveToSignin() {
-      this.$router.push({ path: 'signin' })
+      this.$router.push({ path: "signin" });
     },
     async loginUser() {
       try {
-        await axios.post('http://localhost:3000/api/login', this.user);
+        await axios.post("http://localhost:3000/api/login", this.user);
       } catch {
-        console.log("שגיאה")
+        console.log("שגיאה");
       }
       this.$router.push({ path: "homepage" });
-    }
+    },
   },
 };
 </script>

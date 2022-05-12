@@ -1,8 +1,5 @@
 <template>
-  <v-card class="mx-auto" color="#f8c28c" dark max-width="400">
-    <v-card-text class="text-h5 mb-0 pb-0 font-weight-bold text-center">
-      {{post.title}}
-    </v-card-text>
+  <v-card class="mx-auto" color="#f8c28c" dark min-width="400" max-width="400">
     <v-card-text class="mt-1 pt-0 text-h6 font-weight-bold text-center">
      {{post.body}}
     </v-card-text>
@@ -14,8 +11,7 @@
           mdi-heart
         </v-icon>
         <span class="mx-1">·</span>
-            <span class="subheading">{{3 
-            }}</span>
+            <span class="subheading">{{0}}</span>
         <v-icon class="mx-1">
           mdi-comment-multiple
         </v-icon>

@@ -121,7 +121,7 @@ export default {
   data() {
     return {
       newUser: {
-        username: "glkdglgfkjl",
+        username: "",
         password: "",
         fname: "",
         lname: "",
@@ -141,10 +141,10 @@ export default {
     async addUser() {
       try {
         await axios.post("http://localhost:3000/api/register", this.newUser);
-        this.$router.push({ path: "home" });
       } catch {
-        console.log('שגיאה');
+        console.log("שגיאה");
       }
+      this.$router.push({ path: "homepage" });
     },
   },
 };
