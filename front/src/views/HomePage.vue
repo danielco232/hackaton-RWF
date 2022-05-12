@@ -14,7 +14,6 @@
 
 <script>
 import AppBar from "../components/AppBar";
-
 import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
 import axios from "axios";
@@ -69,7 +68,6 @@ export default {
   },
   methods: {
     async createPost(newPost) {
-      console.log("asdasd");
       try {
         await axios.post("http://localhost:3000/api/post/add", newPost);
       } catch {
